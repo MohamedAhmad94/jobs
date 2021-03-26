@@ -50,7 +50,7 @@ class _DetailesState extends State<Detailes> {
                               image: DecorationImage(
                                   image: NetworkImage('${result.companyLogo}'),
                                   fit: BoxFit.fill),
-                              shape: BoxShape.circle,
+                              shape: BoxShape.rectangle,
                             ),
                             height: 100.0,
                           ),
@@ -60,22 +60,9 @@ class _DetailesState extends State<Detailes> {
                               "Employer: ${result.company}",
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 20.0,
+                                  fontSize: 17.0,
                                   fontWeight: FontWeight.bold),
                             ),
-                          ),
-                          Align(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                                child: Text("Employer Website",
-                                    textAlign: TextAlign.end,
-                                    style: TextStyle(
-                                        color: Colors.indigo,
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.bold)),
-                                onTap: () {
-                                  launch('${result.companyUrl}');
-                                }),
                           ),
                         ],
                       ),
@@ -92,8 +79,8 @@ class _DetailesState extends State<Detailes> {
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.normal)),
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.bold)),
                             subtitle: Text('${result.title}',
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
@@ -106,8 +93,8 @@ class _DetailesState extends State<Detailes> {
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.normal)),
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.bold)),
                             subtitle: Text('${result.location}',
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
@@ -120,8 +107,8 @@ class _DetailesState extends State<Detailes> {
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.normal)),
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.bold)),
                             subtitle: Text('${result.type}',
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
@@ -134,8 +121,8 @@ class _DetailesState extends State<Detailes> {
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.normal)),
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.bold)),
                             subtitle: Text('${result.description}',
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
@@ -161,7 +148,7 @@ class _DetailesState extends State<Detailes> {
                           style: TextButton.styleFrom(
                             backgroundColor: Colors.green,
                           ),
-                          child: Text("View This Vacancy on Our Site",
+                          child: Text("View on Our Site",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 15.0,
@@ -173,13 +160,13 @@ class _DetailesState extends State<Detailes> {
                           style: TextButton.styleFrom(
                             backgroundColor: Colors.indigo,
                           ),
-                          child: Text("Apply",
+                          child: Text("Employer Website",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.bold)),
                           onPressed: () {
-                            launch('${result.applying}');
+                            launch('${result.companyUrl}');
                           }),
                     ],
                   ),

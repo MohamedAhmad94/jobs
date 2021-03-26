@@ -98,12 +98,12 @@ class _HomePageState extends State<HomePage> {
                     final result = context
                         .select((JobController job) => job.allJobs[index]);
                     return Result(
-                      result.type,
-                      result.company,
-                      result.location,
-                      result.title,
-                      result.companyLogo,
-                      result.url,
+                      jobType: result.type,
+                      companyName: result.company,
+                      location: result.location,
+                      jobTitle: result.title,
+                      url: result.url,
+                      id: result.id,
                     );
                   });
                 }),

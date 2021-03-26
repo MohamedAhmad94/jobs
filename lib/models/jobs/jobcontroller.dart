@@ -34,7 +34,7 @@ class JobController with ChangeNotifier, DiagnosticableTreeMixin {
     http.Response _response = await http.get(
       url,
       headers: {
-        'content-type': 'application/json; charset=utf-8',
+        'content-Type': 'application/json; charset=utf-8',
       },
     );
 
@@ -44,14 +44,14 @@ class JobController with ChangeNotifier, DiagnosticableTreeMixin {
         final JobModel _newJob = JobModel(
             id: i['id'],
             type: i['type'],
-            title: i['title'],
             url: i['url'],
             company: i['company'],
             companyUrl: i['company_url'],
-            companyLogo: i['company_logo'],
             location: i['location'],
+            title: i['title'],
             description: i['description'],
-            applying: i['applying']);
+            howToApply: i['How_to_Apply'],
+            companyLogo: i['company_logo']);
         _allJobs.add(_newJob);
         _isLoading = false;
         notifyListeners();
