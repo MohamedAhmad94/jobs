@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:jobs/models/jobs/jobmodel.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'dart:convert' as convert;
 
 class JobController with ChangeNotifier, DiagnosticableTreeMixin {
   bool _isLoading = false;
@@ -28,14 +28,17 @@ class JobController with ChangeNotifier, DiagnosticableTreeMixin {
     _isLoading = true;
     notifyListeners();
 
+    var url = Uri.parse(
+        'https://jobs.github.com/positions.json?search=$searchKeyword');
+
     http.Response _response = await http.get(
-      Uri.https('jobs.github.com', '/positions?search=$searchKeyword'),
+      url,
       headers: {
         'content-type': 'application/json; charset=utf-8',
       },
     );
 
-    var _convert = json.decode(_response.body);
+    var _convert = convert.jsonDecode(_response.body);
     _convert.forEach((i) {
       if (_response.statusCode == 200) {
         final JobModel _newJob = JobModel(

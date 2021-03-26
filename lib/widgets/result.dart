@@ -44,9 +44,9 @@ class _ResultState extends State<Result> {
                   topRight: Radius.circular(15.0)),
               shape: BoxShape.rectangle,
             ),
-            height: 100.0,
+            height: 90.0,
           ),
-          Text('Employer: ${widget.companyName}',
+          Text('Position: ${widget.jobTitle}',
               textAlign: TextAlign.start,
               style: TextStyle(
                   color: Colors.black,
@@ -60,13 +60,13 @@ class _ResultState extends State<Result> {
                   fontWeight: FontWeight.normal)),
           Divider(
               color: Colors.grey, indent: 30.0, endIndent: 30.0, height: 10.0),
-          Text('Position: ${widget.jobTitle}',
+          Text('Type: ${widget.jobType}',
               textAlign: TextAlign.start,
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 15.0,
                   fontWeight: FontWeight.normal)),
-          Text('Type: ${widget.jobType}',
+          Text('Employer: ${widget.companyName}',
               textAlign: TextAlign.start,
               style: TextStyle(
                   color: Colors.black,
